@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="build" name="BuildWithAnt">
+	<property environment="env" />
+	<property name="target" value="1.8" />
+	<property name="source" value="1.8" />
+	<path id="BuildWithAnt.classpath">
+		<pathelement location="bin" />
+	</path>
+	<target name="init">
+		<echo message="Executing init target" />
+		<mkdir dir="bin" />
+		<copy includeemptydirs="false" todir="bin">
+			<fileset dir="src">
+				<exclude name="**/*.launch" />
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+	</target>
+	<target name="clean">
+		<delete dir="bin" />
+	</target>
+	<target depends="init" name="build">
+		<echo message="Building the project ${ant.project.name} located at ${ant.file}" />
+		<javac debug="true" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+			<src path="src" />
+			<classpath refid="BuildWithAnt.classpath" />
+		</javac>
+	</target>
+	<target name="run" depends="build">
+		<echo message="Running my  ${ant.project.name} project!" />
+		<java classname="assignment4.Assignment4" failonerror="true" fork="yes">
+			<classpath refid="BuildWithAnt.classpath" />
+		</java>
+	</target>
+</project>
