@@ -18,7 +18,7 @@ public class Assignment4 {
 		}
 
 		try {
-			SieveofErastosthenes.printMyPrimeNumbers(66);
+			SieveofErastosthenes.printMyPrimeNumbers(96);
 		} catch (Exception e) {
 			System.out.println("Parsing Error!");
 		}
