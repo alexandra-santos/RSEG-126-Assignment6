@@ -18,7 +18,7 @@ public class Assignment4 {
 		}
 
 		try {
-			SieveofErastosthenes.printMyPrimeNumbers(max);
+			SieveofErastosthenes.printMyPrimeNumbers(max1);
 		} catch (Exception e) {
 			System.out.println("Parsing Error!");
 		}
