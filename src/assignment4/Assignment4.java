@@ -10,15 +10,15 @@ public class Assignment4 {
 
 		{
 			// Creating a Scanner instance to enable keyboard
-			@SuppressWarnings("resource")
-			Scanner sc = new Scanner(System.in);
+			//@SuppressWarnings("resource")
+			//Scanner sc = new Scanner(System.in);
 			// Getting argument from the user
-			System.out.println("Enter maximum integer to be checked:");
-			max = sc.nextInt();
+			//System.out.println("Enter maximum integer to be checked:");
+			//max = sc.nextInt();
 		}
 
 		try {
-			SieveofErastosthenes.printMyPrimeNumbers(max);
+			SieveofErastosthenes.printMyPrimeNumbers(40);
 		} catch (Exception e) {
 			System.out.println("Parsing Error!");
 		}
